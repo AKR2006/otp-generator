@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <style>
+        .container{
+            margin: 200px;
+            padding: 100px;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            align-items: center;
+            background-color: rgb(236, 141, 9);
+        }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>One Time Password Generator</h1>
+    <button id="generateBtn">Generate OTP</button>
+    <p >Generated OTP: <span id="otpDisplay"></span></p>
+    </div>
+
+    <script>
+        let generateOTP = () => {
+            const otpLength = 4;
+
+            const otp = Math.floor(1000 + Math.random() * 9000);
+
+            // Display the generated OTP
+            document.getElementById("otpDisplay").innerText = otp;
+        };
+
+        // Attach event listener to the button to generate OTP
+        document.getElementById("generateBtn").addEventListener("click", generateOTP);
+
+        // Automatically generate OTP when the page loads
+        window.addEventListener("load", generateOTP);
+    </script>
+</body>
+</html>
